@@ -9,11 +9,18 @@
 <body>
     <h2>Faça seu Login</h2>
 
-    <form>
+    <form method="post">
         <fieldset>
+            <p >
+                Email: 
+                <input type="text" name="email" placeholder="Digite seu email"/>
+            </p>
             <p>
-                <input type="text" name="email"/>
-                <label for="text1">email</label>
+                Senha: 
+                <input type="password" name="senha" minlength="8" placeholder="Digite sua senha">
+            </p>
+            <p>
+                <button type="submit">Entrar</button>
             </p>
 
         </fieldset>

@@ -5,26 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z7Zvltc8q49HrtnIc9YgA6+ndfPbdP6n6qj553" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h2>Faça seu Login</h2>
+    <div>
+        <h2 class="center" id="titulo">Faça seu Login</h2>
+        <br>
+    </div>
 
     <form method="post">
-        <fieldset>
-            <p >
-                Email: 
-                <input type="text" name="email" placeholder="Digite seu email"/>
-            </p>
-            <p>
-                Senha: 
-                <input type="password" name="senha" minlength="8" placeholder="Digite sua senha">
-            </p>
-            <p>
-                <button type="submit">Entrar</button>
-            </p>
-
+        <fieldset class="ui container">
+            <div>
+                <label><strong>Email:</strong></label>
+            </div>
+            <div class="ui input">
+                <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+            </div>
+            <br><br>
+            <div>
+                <label><strong>Senha:</strong></label>
+            </div>
+            <div class="ui input">
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+            </div>
         </fieldset>
+        <br>
+        <div class="ui container">
+            <button id="botao" class="ui primary button" type="submit">Enviar</button>
+        </div>
     </form>
-    
 </body>
 </html>

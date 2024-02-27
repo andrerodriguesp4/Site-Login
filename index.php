@@ -15,6 +15,11 @@
         header("Cache-Control: no-cache, no-store, must-revalidate");
         header("Pragma: no-cache");
         header("Expires: 0");
+        session_start();
+        if(isset($_SESSION["email"])){
+            header("Location: site.php", true, 301);
+            exit();
+        }
     ?>
     <div>
         <h2 class="center" id="titulo">Faça seu Login</h2>

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     if($_SERVER['REQUEST_METHOD']=="POST"){
         include("connectiondb.php");
 
@@ -9,6 +10,7 @@
         $result = $conn->query($query);
 
         if($result->num_rows > 0){
+            $_SESSION["email"] = $email;
             header("Location: site.php", true, 301);
             exit();
         }else{

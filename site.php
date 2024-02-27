@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área Logada</title>
+    <title>Gestão de Alunos</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z7Zvltc8q49HrtnIc9YgA6+ndfPbdP6n6qj553" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h2>Olá, você efetuou seu login!</h2>
+    <?php
+        session_start();
+
+        if(!isset($_SESSION["email"])){
+            header("Location: index.php", true, 301);
+            exit();
+        }
+    ?>
+
+    <div class="ui container">
+        <h2 id="titulo"> Olá, seja bem vindo(a)!</h2>
+        <h3 id="h3login"></h3>
+        <?php
+            include("connectiondb.php");
+
+            $email = $_SESSION["email"];
+
+            $query = "SELECT nome FROM usuarios WHERE email='$email';";
+            $result = $conn->query($query);
+
+            $row = $result->fetch_assoc();
+            $name = $row['nome'];
+
+            echo "<script>document.getElementById('h3login').innerHTML = 'Usuário: $name';</script>";
+        ?>
+    </div>
+    <div class="ui container">
+        <form action="logout.php" method="post">
+            <button class="ui primary button">Sair</button>
+        </form>
+    </div>
 </body>
 </html>

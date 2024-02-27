@@ -12,7 +12,7 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(45deg, cyan, yellow);
+            background-image: linear-gradient(45deg, red, black);
         }
     </style>
 </head>

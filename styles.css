@@ -1,27 +1,5 @@
-#titulo{
-    font-family: sans-serif;
-    margin-top: 5%;
-}
-
-.center {
-    text-align: center;
-}
-
 fieldset{
     border: 0;
-}
-
-input{
-    display: block;
-}
-
-label{
-    display: inline-block;
-}
-
-.ui.container{
-    text-align: left;
-    padding-left: 12.5%;
 }
 
 #botao:hover{

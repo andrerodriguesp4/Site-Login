@@ -24,6 +24,20 @@
     <form method="post" action="cadastrar.php">
         <fieldset class="ui container">
             <div>
+                <label><strong>Nome: </strong></label>
+            </div>
+            <div class="ui input">
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required autocomplete="off">
+            </div>
+            <br><br>
+            <div>
+                <label><strong>Data de Nascimento: </strong></label>
+            </div>
+            <div class="ui input">
+                <input type="date" name="nasc" id="nasc" placeholder="Digite sua data de nascimento" required autocomplete="off">
+            </div>
+            <br><br>
+            <div>
                 <label><strong>Email:</strong></label>
             </div>
             <div class="ui input">
@@ -34,14 +48,14 @@
                 <label><strong>Senha:</strong></label>
             </div>
             <div class="ui input">
-                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required autocomplete="off">
             </div>
         </fieldset>
         <br>
         <p id="checkuser" class="ui container"></p>
         <?php
             if(isset($_GET['error']) && $_GET['error'] == 'usuariojacadastrado'){
-                echo "<script>document.getElementById('checkuser').innerHTML = 'Usuário já cadastrado!';</script>";
+                echo "<script>document.getElementById('checkuser').innerHTML = 'Este email já está sendo utilizado!';</script>";
             }elseif(isset($_GET['check']) && $_GET['check'] == 'usuariocadastrado'){
                 echo "<script>document.getElementById('checkuser').innerHTML = 'Usuário cadastrado com sucesso!';</script>";
             }

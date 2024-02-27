@@ -2,6 +2,8 @@
     if(isset($_POST['email']) && isset($_POST['senha'])){
         include("connectiondb.php");
     
+        $nome = $_POST["nome"];
+        $nasc = $_POST["nasc"];
         $email = $_POST["email"];
         $senha = $_POST["senha"];
     
@@ -12,7 +14,7 @@
             header("Location: cadastro.php?error=usuariojacadastrado", true, 301);
             exit();
         }else{
-            $query = "INSERT INTO usuarios (email, password) VALUES ('$email', '$senha');";
+            $query = "INSERT INTO usuarios (nome, datanasc, email, password) VALUES ('$nome','$nasc','$email', '$senha');";
             $result = $conn->query($query);
             header("Location: cadastro.php?check=usuariocadastrado", true, 301);
             exit();

@@ -62,8 +62,8 @@
         ?>
         <br>
         <div class="ui container">
-            <button id="botaocadastrar" class="ui button" type="submit">Cadastrar</button>
-            <a href="index.php"><button id="botaologin" class="ui primary button" type="button">Faça seu Login</button></a>
+            <button id="botaocadastrar" class="ui primary button" type="submit">Cadastrar</button>
+            <a href="index.php"><button id="botaologin" class="ui button" type="button">Faça seu Login</button></a>
         </div>
     </form>
 

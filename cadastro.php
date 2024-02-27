@@ -17,11 +17,11 @@
         header("Expires: 0");
     ?>
     <div>
-        <h2 class="center" id="titulo">Faça seu Login</h2>
+        <h2 class="center" id="titulo">Cadastre-se</h2>
         <br>
     </div>
 
-    <form method="post" action="logincheck.php">
+    <form method="post" action="cadastrar.php">
         <fieldset class="ui container">
             <div>
                 <label><strong>Email:</strong></label>
@@ -34,23 +34,22 @@
                 <label><strong>Senha:</strong></label>
             </div>
             <div class="ui input">
-                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required autocomplete="off">
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
             </div>
         </fieldset>
-        <div class="ui container">
-            <a href="">Esqueci minha senha</a>
-        </div>
         <br>
         <p id="checkuser" class="ui container"></p>
         <?php
-            if(isset($_GET['error']) && $_GET['error'] == 'usuarionaoencontrado'){
-                echo "<script>document.getElementById('checkuser').innerHTML = 'Email ou senha inválidos!';</script>";
+            if(isset($_GET['error']) && $_GET['error'] == 'usuariojacadastrado'){
+                echo "<script>document.getElementById('checkuser').innerHTML = 'Usuário já cadastrado!';</script>";
+            }elseif(isset($_GET['check']) && $_GET['check'] == 'usuariocadastrado'){
+                echo "<script>document.getElementById('checkuser').innerHTML = 'Usuário cadastrado com sucesso!';</script>";
             }
         ?>
         <br>
         <div class="ui container">
-            <button id="botaoentrar" class="ui primary button" type="submit">Entrar</button>
-            <a href="cadastro.php"><button id="botaocadastrar" class="ui button" type="button">Cadastre-se</button></a>
+            <button id="botaocadastrar" class="ui button" type="submit">Cadastrar</button>
+            <a href="index.php"><button id="botaologin" class="ui primary button" type="button">Faça seu Login</button></a>
         </div>
     </form>
 

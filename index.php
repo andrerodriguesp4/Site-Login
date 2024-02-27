@@ -41,5 +41,9 @@
             <a href="cadastro.html"><button id="botaocadastrar" class="ui button" type="button">Cadastre-se</button></a>
         </div>
     </form>
+
+    <?php
+        include("connectiondb.php");
+    ?>
 </body>
 </html>

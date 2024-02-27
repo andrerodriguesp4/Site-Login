@@ -59,7 +59,7 @@
                 <a href="">Esqueci minha senha</a>
             </div>
             <br>
-            <p id="checkuser"></p>
+            <p id="checkuser" style="color: yellow;"></p>
             <?php
                 if(isset($_GET['error']) && $_GET['error'] == 'usuarionaoencontrado'){
                     echo "<script>document.getElementById('checkuser').innerHTML = 'Email ou senha inválidos!';</script>";

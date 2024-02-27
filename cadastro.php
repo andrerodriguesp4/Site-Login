@@ -62,11 +62,11 @@
                     <label><strong>Senha:</strong></label>
                 </div>
                 <div class="ui input">
-                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required autocomplete="off">
+                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required autocomplete="off" minlength="8">
                 </div>
             </fieldset>
             <br>
-            <p id="checkuser"></p>
+            <p id="checkuser" style="color: yellow;"></p>
             <?php
                 if(isset($_GET['error']) && $_GET['error'] == 'usuariojacadastrado'){
                     echo "<script>document.getElementById('checkuser').innerHTML = 'Este email já está sendo utilizado!';</script>";

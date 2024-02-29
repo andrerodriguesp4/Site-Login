@@ -77,7 +77,7 @@
             <br>
             <div>
                 <button id="botaocadastrar" class="ui primary button" type="submit">Cadastrar</button>
-                <a href="index.php"><button id="botaologin" class="ui button" type="button">Faça seu Login</button></a>
+                <a href="loginemail.php"><button id="botaologin" class="ui button" type="button">Faça seu Login</button></a>
             </div>
         </form>
     </div>

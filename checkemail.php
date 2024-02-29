@@ -4,17 +4,16 @@
         include("connectiondb.php");
 
         $email = $_POST["email"];
-        $senha = $_POST["senha"];
 
-        $query = "SELECT * FROM usuarios WHERE email='$email' AND password ='$senha';";
+        $query = "SELECT * FROM usuarios WHERE email='$email';";
         $result = $conn->query($query);
 
         if($result->num_rows > 0){
             $_SESSION["email"] = $email;
-            header("Location: site.php", true, 301);
+            header("Location: loginsenha.php", true, 301);
             exit();
         }else{
-            header("Location: index.php?error=usuarionaoencontrado", true, 301);
+            header("Location: loginemail.php?error=emailnaoencontrado", true, 301);
             exit();
         }
 

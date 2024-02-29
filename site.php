@@ -21,8 +21,11 @@
         session_start();
 
         if(!isset($_SESSION["email"])){
-            header("Location: index.php", true, 301);
+            header("Location: loginemail.php", true, 301);
             exit();
+        }
+        if(!isset($_SESSION["senha"])){
+            header("Location: loginemail.php", true, 301);
         }
     ?>
 

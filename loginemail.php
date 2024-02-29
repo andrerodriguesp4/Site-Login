@@ -32,17 +32,36 @@
         header("Pragma: no-cache");
         header("Expires: 0");
         session_start();
-        if(isset($_SESSION["email"])){
+        if(isset($_SESSION["email"]) && isset($_SESSION["senha"])){
             header("Location: site.php", true, 301);
             exit();
         }
-    ?>
-    <div id="divlogin">
-        <h2>Olá, bem vindo ao site!</h2>
-        <p>Faça seu login para continuar</p>
-        <a href="loginemail.php"><button class="ui primary button">Login</button></a>
-        <a href="cadastro.php"><button class="ui button">Cadastre-se</button></a>
+        ?>
+    <div id="bodyemail">
+        <div id="divlogin">
+            <h2 style="font-family: Arial, Helvetica, sans-serif;">Login</h2>
+            <form method="post" action="checkemail.php">
+                <fieldset>
+                    <div>
+                        <label><strong>Email:</strong></label>
+                    </div>
+                    <div class="ui input">
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                    </div>
+                </fieldset>
+                <p id="checkuser" style="color: yellow;"></p>
+                <?php
+                    if(isset($_GET['error']) && $_GET['error'] == 'emailnaoencontrado'){
+                        echo "<script>document.getElementById('checkuser').innerHTML = 'Email não encontrado!';</script>";
+                    }
+                ?>
+                <br>
+                <div>
+                    <button id="botaoavançar" class="ui primary button" type="submit">Avançar</button>
+                    <a href="cadastro.php"><button id="botaocadastrar" class="ui button" type="button">Cadastre-se</button></a>
+                </div>
+            </form>
+        </div>
     </div>
-
 </body>
 </html>
